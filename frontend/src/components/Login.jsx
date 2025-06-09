@@ -1,50 +1,47 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { TextField, Button, Box, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function UserForm({ onSubmit, loading, error }) {
-  const [values, setValues] = useState({ name: '', email: '', password: '' });
+const Login = ({ onLoginSuccess, loading, error }) => {
+  const [values, setValues] = useState({ email: '', password: '' });
   const [clientError, setClientError] = useState('');
-
+  const navigate = useNavigate();
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value });
     setClientError('');
   };
 
   const validate = () => {
-    if (!values.name || !values.email || !values.password) {
-      setClientError('All fields are required.');
-      return false;
-    }
-    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(values.email)) {
-      setClientError('Invalid email format.');
-      return false;
-    }
-    if (values.password.length < 6) {
-      setClientError('Password must be at least 6 characters.');
+    if (!values.email || !values.password) {
+      setClientError('Both email and password are required.');
       return false;
     }
     return true;
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) onSubmit(values);
+    if (validate()) {
+      setClientError('');
+      try {
+        const res = await axios.post('users/login', values);
+        if (onLoginSuccess) onLoginSuccess(res.data);
+        toast.success("LoggedIn successfully!!")
+        navigate('/products');
+      } catch (err) {
+        // Error will be passed from parent via `error` prop or handled here
+        // if needed, but for now we rely on the parent or general Axios error.
+      }
+    }
   };
 
   return (
+    <><ToastContainer />
     <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400, mx: 'auto' }}>
-      <Typography variant="h5" mb={2}>Register</Typography>
-      <TextField
-        label="Name"
-        name="name"
-        value={values.name}
-        onChange={handleChange}
-        fullWidth
-        margin="normal"
-        required
-        inputProps={{ 'aria-label': 'Name' }}
-      />
+      <Typography variant="h5" mb={2}>Login</Typography>
       <TextField
         label="Email"
         name="email"
@@ -81,11 +78,14 @@ export default function UserForm({ onSubmit, loading, error }) {
         sx={{ mt: 2 }}
         aria-busy={loading}
       >
-        {loading ? 'Registering...' : 'Register'}
+        {loading ? 'Logging in...' : 'Login'}
       </Button>
       <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-        Already registered? <Link to="/login">Login</Link>
+        Don't have an account? <Link to="/register">Register</Link>
       </Typography>
     </Box>
+    </>
   );
-} 
+};
+
+export default Login; 

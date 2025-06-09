@@ -11,7 +11,13 @@ export default function ProductListPage() {
     const fetchProducts = async () => {
       try {
         const res = await axios.get('/products');
-        setProducts(res.data.products || []);
+        // Assuming res.data is an array of products, or res.data.products if nested
+        // Adding dummy image URLs if the API doesn't provide them, or for initial display.
+        const fetchedProducts = (res.data.products || res.data).map(product => ({
+          ...product,
+          image_url: product.image_url || `https://via.placeholder.com/250?text=${encodeURIComponent(product.name || 'Product')}`
+        }));
+        setProducts(fetchedProducts);
       } catch (err) {
         setError('Failed to load products');
       } finally {
@@ -26,22 +32,27 @@ export default function ProductListPage() {
 
   return (
     <Box p={2}>
-      <Typography variant="h4" mb={3}>Product List</Typography>
-      <Grid container spacing={3}>
+      <Typography variant="h4" mb={3} textAlign="center">Our Products</Typography>
+      <Grid container spacing={3} justifyContent="center">
         {products.map(product => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
-            <Card>
+          <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={product.id}>
+            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               {product.image_url && (
                 <CardMedia
                   component="img"
-                  height="160"
+                  height="200"
                   image={product.image_url}
-                  alt={product.name}
+                  alt={product.name || 'Product Image'}
+                  sx={{ objectFit: 'cover' }}
                 />
               )}
-              <CardContent>
-                <Typography variant="h6">{product.name}</Typography>
-                <Typography color="text.secondary">${product.price}</Typography>
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography gutterBottom variant="h6" component="div">
+                  {product.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  ${product.price ? product.price : 'N/A'}
+                </Typography>
               </CardContent>
             </Card>
           </Grid>
