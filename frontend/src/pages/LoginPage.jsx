@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Login from '../components/Login';
-import { loginUser } from '../redux/slices/authSlice';
+import { AUTH_ACTION_TYPES } from '../redux/actionTypes/authActionTypes'; // Import action types
 import { toast } from 'react-toastify';
 
 export default function LoginPage() {
@@ -11,21 +11,18 @@ export default function LoginPage() {
   const { loading, error, isAuthenticated } = useSelector(state => state.auth);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/products'); // Redirect authenticated users to products page
+    if (!loading) { // When loading finishes
+      if (isAuthenticated && !error) { // If authenticated and no error (success)
+        toast.success('Logged in successfully!');
+        navigate('/products'); // Redirect authenticated users to products page
+      } else if (error) { // If there's an error (failure)
+        toast.error(error.message || 'Login failed.');
+      }
     }
-  }, [isAuthenticated, navigate]);
+  }, [loading, isAuthenticated, error, navigate]);
 
-  const handleLogin = async (data) => {
-    try {
-      await dispatch(loginUser(data)).unwrap();
-      toast.success('Logged in successfully!');
-      navigate('/products');
-    } catch (err) {
-      // Error toast is already handled by RegisterPage now due to previous change
-      // If you want a specific toast for login errors, you can add it here:
-      // toast.error(err.message || 'Login failed.');
-    }
+  const handleLogin = (data) => {
+    dispatch({ type: AUTH_ACTION_TYPES.LOGIN_REQUEST, payload: data });
   };
 
   return (

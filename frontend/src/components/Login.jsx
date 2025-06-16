@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { TextField, Button, Box, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { login } from '../api/auth';
+import { useDispatch } from 'react-redux';
+import SessionStorage from '../utils/sessionStorage';
+import APPCONSTANTS from '../constants/appConstants';
 
 const Login = ({ onLoginSuccess, loading, error }) => {
   const [values, setValues] = useState({ email: '', password: '' });
   const [clientError, setClientError] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value });
     setClientError('');
@@ -27,13 +31,22 @@ const Login = ({ onLoginSuccess, loading, error }) => {
     if (validate()) {
       setClientError('');
       try {
-        const res = await axios.post('users/login', values);
-        if (onLoginSuccess) onLoginSuccess(res.data);
+        const res = await login(values);
+        const { user, token } = res;
+
+        SessionStorage.setItem(APPCONSTANTS.AUTHTOKEN, token);
+        SessionStorage.setItem(APPCONSTANTS.USER_ID, user.id);
+
+        dispatch({ type: 'auth/loginSuccess', payload: { user, token } });
+
+        if (onLoginSuccess) onLoginSuccess(user);
         toast.success("LoggedIn successfully!!")
         navigate('/products');
       } catch (err) {
-        // Error will be passed from parent via `error` prop or handled here
-        // if needed, but for now we rely on the parent or general Axios error.
+        console.error("Login Error:", err);
+        const errorMessage = err.message || 'Failed to login';
+        setClientError(errorMessage);
+        toast.error(errorMessage);
       }
     }
   };

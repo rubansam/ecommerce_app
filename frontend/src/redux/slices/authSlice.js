@@ -1,37 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-export const registerUser = createAsyncThunk(
-  'auth/registerUser',
-  async (userData, { rejectWithValue }) => {
-    try {
-      const response = await axios.post('/users', userData);
-      return response.data;
-    } catch (err) {
-      if (err.response && err.response.data && err.response.data.error) {
-        return rejectWithValue(err.response.data.error);
-      }
-      return rejectWithValue('Registration failed');
-    }
-  }
-);
-
-export const loginUser = createAsyncThunk(
-  'auth/loginUser',
-  async (credentials, { rejectWithValue }) => {
-    try {
-      const response = await axios.post('/api/login', credentials);
-      // Optionally, store token in localStorage here if using JWT
-      // localStorage.setItem('token', response.data.token);
-      return response.data.user; // Assuming API returns { message, user, token }
-    } catch (err) {
-      if (err.response && err.response.data && err.response.data.error) {
-        return rejectWithValue(err.response.data.error);
-      }
-      return rejectWithValue('Login failed');
-    }
-  }
-);
+import { createSlice } from '@reduxjs/toolkit';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -41,39 +8,64 @@ const authSlice = createSlice({
     error: null,
     isAuthenticated: false,
   },
-  reducers: {},
-  extraReducers: builder => {
-    builder
-      .addCase(registerUser.pending, state => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(registerUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.user = action.payload;
-        state.error = null;
-      })
-      .addCase(registerUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-      .addCase(loginUser.pending, state => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.user = action.payload;
-        state.isAuthenticated = true;
-        state.error = null;
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.loading = false;
-        state.user = null;
-        state.isAuthenticated = false;
-        state.error = action.payload;
-      });
+  reducers: {
+    registerRequest: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    registerSuccess: (state, action) => {
+      state.loading = false;
+      state.user = action.payload;
+      state.error = null;
+    },
+    registerFailure: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    loginRequest: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    loginSuccess: (state, action) => {
+      state.loading = false;
+      state.user = action.payload;
+      state.isAuthenticated = true;
+      state.error = null;
+    },
+    loginFailure: (state, action) => {
+      state.loading = false;
+      state.user = null;
+      state.isAuthenticated = false;
+      state.error = action.payload;
+    },
+    sessionTimedOut: (state, action) => {
+      state.user = null;
+      state.isAuthenticated = false;
+      state.token = null; // Clear token from state
+      localStorage.removeItem('token'); // Clear token from local storage
+      localStorage.removeItem('userId'); // Clear user ID from local storage (if stored)
+      state.error = action.payload; // Store the session timeout message
+    },
+    getUserByIdRequest: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    getUserByIdSuccess: (state, action) => {
+      state.loading = false;
+      state.user = action.payload;
+      state.isAuthenticated = true;
+      state.error = null;
+    },
+    getUserByIdFailure: (state, action) => {
+      state.loading = false;
+      state.user = null;
+      state.isAuthenticated = false;
+      state.error = action.payload;
+      localStorage.removeItem('token'); // Clear token on failure to get user
+      localStorage.removeItem('userId');
+    },
   },
 });
 
+export const { registerRequest, registerSuccess, registerFailure, loginRequest, loginSuccess, loginFailure, sessionTimedOut, getUserByIdRequest, getUserByIdSuccess, getUserByIdFailure } = authSlice.actions;
 export default authSlice.reducer; 

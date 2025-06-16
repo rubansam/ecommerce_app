@@ -1,40 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Grid, Card, CardContent, CardMedia, Typography, CircularProgress, Box, Alert } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { Grid, Card, CardContent, CardMedia, Typography, CircularProgress, Box, Alert, IconButton } from '@mui/material';
+import { PRODUCT_ACTION_TYPES } from '../redux/actionTypes/productActionTypes';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductListPage() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
+  const dispatch = useDispatch();
+  const { products, loading, error } = useSelector(state => state.products);
+  const navigate = useNavigate();
+  console.log({products});
+  
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await axios.get('/products');
-        // Assuming res.data is an array of products, or res.data.products if nested
-        // Adding dummy image URLs if the API doesn't provide them, or for initial display.
-        const fetchedProducts = (res.data.products || res.data).map(product => ({
-          ...product,
-          image_url: product.image_url || `https://via.placeholder.com/250?text=${encodeURIComponent(product.name || 'Product')}`
-        }));
-        setProducts(fetchedProducts);
-      } catch (err) {
-        setError('Failed to load products');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
+    dispatch({ type: PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_REQUEST });
+  }, [dispatch]);
+
+  const handleLogout = () => {
+    console.log("User logged out!");
+    navigate('/login');
+  };
 
   if (loading) return <Box display="flex" justifyContent="center" mt={4}><CircularProgress /></Box>;
   if (error) return <Box mt={4}><Alert severity="error">{error}</Alert></Box>;
 
   return (
     <Box p={2}>
-      <Typography variant="h4" mb={3} textAlign="center">Our Products</Typography>
+      <Box display="flex" alignItems="center" width="100%" mb={3}>
+        <Typography variant="h4" flexGrow={1} textAlign="center">Our Products</Typography>
+        <Box sx={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
+            <IconButton color="inherit" aria-label="shopping cart">
+                <ShoppingCartIcon fontSize="large" />
+            </IconButton>
+            <IconButton color="inherit" aria-label="logout" onClick={handleLogout}>
+                <LogoutIcon fontSize="large" />
+            </IconButton>
+        </Box>
+      </Box>
       <Grid container spacing={3} justifyContent="center">
-        {products.map(product => (
+        {products?.products?.map(product => (
           <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={product.id}>
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               {product.image_url && (

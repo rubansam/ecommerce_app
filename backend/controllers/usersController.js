@@ -1,9 +1,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
 // Optional: If you plan to use JWT for authentication
-// const jwt = require('jsonwebtoken');
-// const config = require('../config/config'); // Assuming you have a config file for JWT secret
-
+const jwt = require('jsonwebtoken');
 exports.register = async (req, res, next) => {
   try {
   
@@ -51,10 +49,10 @@ exports.login = async (req, res, next) => {
       return res.status(401).json({ error: 'Invalid credentials.' });
     }
 
-    // Optional: Generate a JWT token
-    // const token = jwt.sign({ id: user.id, email: user.email }, config.jwtSecret, { expiresIn: '1h' });
+    // Generate a JWT token using process.env.JWT_SECRET
+    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    res.status(200).json({ message: 'Login successful', user: { id: user.id, name: user.name, email: user.email, role: user.role } /*, token*/ });
+    res.status(200).json({ message: 'Login successful', user: { id: user.id, name: user.name, email: user.email, role: user.role }, token });
   } catch (err) {
     next(err);
   }
