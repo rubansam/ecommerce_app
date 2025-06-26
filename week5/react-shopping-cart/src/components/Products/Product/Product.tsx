@@ -52,8 +52,11 @@ const Product = ({ product }: IProps) => {
     }
   };
 
+  // Sanitize SKU to only allow digits (prevents path traversal or injection)
+  const safeSku = typeof sku === 'number' ? sku : String(sku).replace(/[^0-9]/g, '');
+
   return (
-    <S.Container onKeyUp={handleAddProductWhenEnter} sku={sku} tabIndex={1}>
+    <S.Container onKeyUp={handleAddProductWhenEnter} sku={safeSku} tabIndex={1}>
       {isFreeShipping && <S.Stopper>Free shipping</S.Stopper>}
       <S.Image alt={title} />
       <S.Title>{title}</S.Title>

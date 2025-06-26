@@ -22,6 +22,8 @@ const CartProduct = ({ product }: IProps) => {
     quantity,
   } = product;
 
+  const safeSku = typeof sku === 'number' ? sku : String(sku).replace(/[^0-9]/g, '');
+
   const handleRemoveProduct = () => removeProduct(product);
   const handleIncreaseProductQuantity = () => increaseProductQuantity(product);
   const handleDecreaseProductQuantity = () => decreaseProductQuantity(product);
@@ -33,7 +35,7 @@ const CartProduct = ({ product }: IProps) => {
         title="remove product from cart"
       />
       <S.Image
-        src={require(`static/products/${sku}-1-cart.webp`)}
+        src={require(`static/products/${safeSku}-1-cart.webp`)}
         alt={title}
       />
       <S.Details>
