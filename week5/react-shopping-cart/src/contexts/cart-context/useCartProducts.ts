@@ -12,28 +12,25 @@ const useCartProducts = () => {
     quantity: number
   ): ICartProduct => {
     if (currentProduct.id === targetProduct.id) {
-      return Object.assign({
+      return {
         ...currentProduct,
         quantity: currentProduct.quantity + quantity,
-      });
+      };
     } else {
       return currentProduct;
     }
   };
 
   const addProduct = (newProduct: ICartProduct) => {
-    let updatedProducts;
     const isProductAlreadyInCart = products.some(
       (product: ICartProduct) => newProduct.id === product.id
     );
 
-    if (isProductAlreadyInCart) {
-      updatedProducts = products.map((product: ICartProduct) => {
-        return updateQuantitySafely(product, newProduct, newProduct.quantity);
-      });
-    } else {
-      updatedProducts = [...products, newProduct];
-    }
+    const updatedProducts = isProductAlreadyInCart
+      ? products.map((product: ICartProduct) =>
+          updateQuantitySafely(product, newProduct, newProduct.quantity)
+        )
+      : [...products, newProduct];
 
     setProducts(updatedProducts);
     updateCartTotal(updatedProducts);
