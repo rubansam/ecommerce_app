@@ -1,0 +1,198 @@
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:20:17"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:20:46"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:20:51"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:20:55"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:21:05"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:21:09"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:21:09"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:21:19"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:21:19"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:21:19"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:21:33"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:21:33"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:21:33"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:21:37"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:21:37"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:21:37"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:21:37"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:27:32"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:27:32"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:27:32"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:27:32"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:28:06"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:28:07"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:28:07"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:28:07"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:28:26"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:28:26"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:28:26"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:28:26"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:28:45"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:28:45"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:28:45"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:28:45"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:29:02"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:29:02"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:29:02"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:29:02"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:29:38"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:29:38"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:29:38"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:29:38"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:29:45"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:29:45"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:29:45"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:29:45"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:30:27"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:30:27"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:30:27"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:30:27"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:31:54"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:31:54"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:31:54"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:31:54"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:32:26"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:32:26"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:32:26"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:32:26"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:32:31"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:32:31"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:32:31"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:32:31"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:33:06"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:33:06"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:33:06"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:33:06"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:36:03"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:36:03"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:36:03"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:36:03"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:36:29"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:36:29"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:36:29"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:36:29"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:36:47"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:36:47"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:36:47"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:36:47"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:37:17"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:37:17"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:37:17"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:37:17"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:37:25"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:37:26"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:37:26"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:37:26"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:38:14"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:38:14"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:38:14"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:38:14"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-07 19:39:07"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-07 19:39:07"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-07 19:39:07"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-07 19:39:07"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-08 11:26:02"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:26:03"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-08 11:26:36"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:26:36"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:26:36"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:26:36"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-08 11:27:16"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:27:17"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:27:17"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-08 11:29:53"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:32:55"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:32:55"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:33:37"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:33:37"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:33:37"}
+{"level":"info","message":"New user registered: testuser (testuser@example.com)","timestamp":"2025-07-08 11:33:37"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:33:37"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:35:28"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:35:28"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:35:28"}
+{"level":"error","message":"Registration error for testuser@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"testuser\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:35:28"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:35:28"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:40:13"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:40:13"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:40:13"}
+{"level":"error","message":"Registration error for testuser@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"testuser\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:40:13"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:40:14"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:41:09"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:41:09"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:41:09"}
+{"level":"error","message":"Registration error for testuser@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"testuser\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:41:09"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:41:10"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:42:09"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:42:09"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:42:09"}
+{"level":"info","message":"New user registered: user (user@example.com)","timestamp":"2025-07-08 11:42:09"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:42:09"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:49:58"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:49:58"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:49:58"}
+{"level":"info","message":"New user registered: userfortest (userfortest@example.com)","timestamp":"2025-07-08 11:49:58"}
+{"level":"info","message":"User logged in: userfortest (userfortest@example.com)","timestamp":"2025-07-08 11:49:58"}
+{"level":"info","message":"Dashboard stats cache miss for user 686cb88e1140b4d7369e6a52","timestamp":"2025-07-08 11:49:58"}
+{"level":"info","message":"Dashboard stats cached for user 686cb88e1140b4d7369e6a52","timestamp":"2025-07-08 11:49:58"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:50:02"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:50:02"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:50:02"}
+{"level":"error","message":"Registration error for user@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"user\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:50:02"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:50:02"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:51:36"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:51:36"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:51:36"}
+{"level":"error","message":"Registration error for nser@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"user\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:51:36"}
+{"level":"info","message":"User logged in: testuser (testuser@example.com)","timestamp":"2025-07-08 11:51:36"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:51:39"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:51:39"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:51:39"}
+{"level":"error","message":"Registration error for userfortest@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"userfortest\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:51:39"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:52:16"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:52:16"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:52:16"}
+{"level":"error","message":"Registration error for nser@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"user\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:52:16"}
+{"level":"warn","message":"Login failed: user not found for nuser@example.com","timestamp":"2025-07-08 11:52:16"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:52:19"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:52:19"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:52:19"}
+{"level":"error","message":"Registration error for userfortest@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"userfortest\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:52:19"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:53:18"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:53:18"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:53:18"}
+{"level":"error","message":"Registration error for testing@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"user\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:53:19"}
+{"level":"warn","message":"Login failed: user not found for testing@example.com","timestamp":"2025-07-08 11:53:19"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:53:22"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:53:22"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:53:22"}
+{"level":"error","message":"Registration error for userfortest@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"userfortest\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:53:22"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:56:11"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:56:11"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:56:11"}
+{"level":"error","message":"Registration error for david@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"user\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:56:11"}
+{"level":"warn","message":"Login failed: user not found for david@example.com","timestamp":"2025-07-08 11:56:11"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:56:14"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:56:14"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:56:14"}
+{"level":"error","message":"Registration error for userfortest@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"userfortest\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:56:14"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:57:16"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:57:16"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:57:16"}
+{"level":"info","message":"New user registered: daviduser (david@example.com)","timestamp":"2025-07-08 11:57:16"}
+{"level":"info","message":"User logged in: daviduser (david@example.com)","timestamp":"2025-07-08 11:57:16"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 11:57:19"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 11:57:19"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 11:57:19"}
+{"level":"error","message":"Registration error for userfortest@example.com: MongoServerError: E11000 duplicate key error collection: test.users index: username_1 dup key: { username: \"userfortest\" }\n    at InsertOneOperation.execute (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\insert.ts:88:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at tryOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:283:14)\n    at executeOperation (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n    at Collection.insertOne (C:\\ecommerce_app\\week6\\backend\\node_modules\\mongodb\\src\\collection.ts:286:12)","timestamp":"2025-07-08 11:57:19"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"New user registered: fortest (fortest@example.com)","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"User logged in: fortest (fortest@example.com)","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"Dashboard stats cache miss for user 686cbb572be2540d94aa4797","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"Dashboard stats cached for user 686cbb572be2540d94aa4797","timestamp":"2025-07-08 12:01:51"}
+{"level":"info","message":"Server running on port 4000","timestamp":"2025-07-09 16:55:52"}
+{"0":{"BucketRegion":"us-east-1","CreationDate":"2025-07-07T07:25:07.000Z","Name":"social-media-bucket"},"level":"info","message":"S3 Buckets:","timestamp":"2025-07-09 16:55:53"}
+{"level":"info","message":"Bucket \"social-media-bucket\" already exists.","timestamp":"2025-07-09 16:55:53"}
+{"level":"info","message":"MongoDB connected","timestamp":"2025-07-09 16:55:53"}

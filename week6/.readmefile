@@ -1,0 +1,9 @@
+---
+
+## Notes
+
+- Make sure Docker is running before starting the backend/frontend.
+- Mongo Express default login: `admin` / `pass` (or as set in your compose file).
+- For S3 uploads, LocalStack must be running and bucket created.
+
+---

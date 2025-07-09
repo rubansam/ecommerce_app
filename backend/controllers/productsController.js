@@ -1,9 +1,17 @@
+const AWS = require('aws-sdk');
 const Product = require('../models/product');
 const redis = require('redis');
+const fs = require('fs');
+const path = require('path');
+const multer = require('multer');
+const upload = multer(); // Use memory storage
+
+const bucketName = 'social-media-bucket'; // Updated bucket name
+
 
 // Configure Redis client
 const redisClient = redis.createClient({
-  url: process.env.REDIS_URL || 'redis://localhost:6379',
+  url: process.env.REDIS_URL || 'redis://localhost:6380',
 });
 
 redisClient.on('connect', () => console.log('Connected to Redis!'));
@@ -38,14 +46,18 @@ exports.listProducts = async (req, res, next) => {
   }
 };
 
-exports.createProduct = async (req, res, next) => {
+exports.createProduct = [upload.single('image'), async (req, res, next) => {
   try {
-    const { name, description, price, stock, category, image_url } = req.body;
+    console.log("req:", req.body, req.file);
+    const { name, description, price, stock, category } = req.body;
+    const file = req.file;
 
     if (!name || !price || !stock) {
       return res.status(400).json({ error: 'Product name, price, and stock are required.' });
     }
-
+    if (!file) {
+      return res.status(400).json({ error: 'Product image is required.' });
+    }
     // Basic validation for price and stock to be numbers
     if (isNaN(price) || price <= 0) {
       return res.status(400).json({ error: 'Price must be a positive number.' });
@@ -54,6 +66,25 @@ exports.createProduct = async (req, res, next) => {
       return res.status(400).json({ error: 'Stock must be a non-negative number.' });
     }
 
+    // S3 setup (assume already configured in app.js)
+    const s3 = req.app.get('s3') || new AWS.S3({
+      endpoint: 'http://localhost:4566',
+      accessKeyId: 'test',
+      secretAccessKey: 'test',
+      s3ForcePathStyle: true
+    });
+
+    // Upload image to S3
+    const s3Key = `products/${Date.now()}_${file.originalname}`;
+    const uploadResult = await s3.upload({
+      Bucket: bucketName,
+      Key: s3Key,
+      Body: file.buffer,
+      ContentType: file.mimetype,
+    }).promise();
+    const image_url = uploadResult.Location;
+
+    // Save product to DB
     const product = await Product.create({
       name,
       description,
@@ -67,4 +98,5 @@ exports.createProduct = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-}; 
+}];
+

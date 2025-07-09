@@ -1,0 +1,58 @@
+# Use root/example as user/password credentials
+
+version: '3'
+services:
+
+    mongo:
+      image: mongo
+      restart: always
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: socialapp
+      ports:
+        - 27017:27017  
+      networks:
+        - social_app_network
+  
+    mongo-express:
+      image: mongo-express
+      restart: always
+      ports:
+        - 8081:8081
+      environment:
+        ME_CONFIG_MONGODB_ADMINUSERNAME: root
+        ME_CONFIG_MONGODB_ADMINPASSWORD: socialapp
+        ME_CONFIG_MONGODB_URL: mongodb://root:socialapp@mongo:27017/
+        ME_CONFIG_BASICAUTH: false
+      networks:
+        - social_app_network
+
+    redis:
+      image: redis
+      restart: always
+      ports:
+        - 6380:6379
+      networks:
+        - social_app_network
+
+    # backend:
+    #   build: ./backend
+    #   ports:
+    #    - 4000:4000
+    #   environment:
+    #    - MONGO_URI=mongodb://root:socialapp@mongo:27017/
+    #    - REDIS_URL=redis://redis:6379
+    #   depends_on:
+    #    - mongo
+    #    - redis
+
+    # frontend:
+    #   build: ./frontend
+    #   ports:
+    #    - 3000:3000
+    #   depends_on:
+    #    - backend    
+
+networks:
+  social_app_network:
+  
