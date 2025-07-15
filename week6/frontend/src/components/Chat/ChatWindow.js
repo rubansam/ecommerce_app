@@ -13,28 +13,18 @@ export default function ChatWindow({ friend, user, onClose, setMessages,messages
     }
   }, [user]);
 
+  // Mark messages as read when chat window opens
   useEffect(() => {
-    const handler = (msg) => {
-        console.log("handler:,mess",msg);
-        
-      if (
-        (msg.from === friend._id && msg.to === user.id) ||
-        (msg.from === user.id && msg.to === friend._id)
-      ) {
-        setMessages((prev) => [...prev, msg]);
-      }
-    };
-    socket.on('receive_message', handler);
-    return () => {
-      socket.off('receive_message', handler);
-    };
-  }, [friend._id, user.id]);
+    if (friend && user && friend._id && user.id) {
+      socket.emit('mark_as_read', { from: friend._id, to: user.id });
+    }
+  }, [friend, user]);
+
+ 
 
   const sendMessage = () => {
     if (!input.trim()) return;
-    const msg = { to: friend._id, from: user.id, message: input };
-    console.log("emit:",msg);
-    
+    const msg = { to: friend._id, from: user.id, message: input };   
     socket.emit('send_message', msg);
     setInput('');
   };

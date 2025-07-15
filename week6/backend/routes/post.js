@@ -59,10 +59,71 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
 router.get('/mine', auth, async (req, res) => {
   try {
     logger.info('User %s requested their posts', req.user.id);
-    const posts = await Post.find({ user: req.user.id }).sort({ createdAt: -1 });
+    const posts = await Post.find({ user: req.user.id }).sort({ createdAt: -1 }).populate('user', 'username');
     res.json(posts);
   } catch (err) {
     logger.error('Error fetching posts for user %s: %s', req.user.id, err.stack || err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /posts/:id/like
+router.post('/:id/like', auth, async (req, res) => {
+  const post = await Post.findById(req.params.id);
+  if (!post) return res.status(404).send('Post not found');
+  const userId = req.user.id;
+  const index = post.likes.findIndex(id => id && id.toString() === userId.toString());
+  if (index === -1) {
+    post.likes.push(userId);
+  } else {
+    post.likes.splice(index, 1);
+  }
+  // Remove any accidental nulls before saving
+post.likes = post.likes.filter(Boolean);
+  await post.save();
+  res.json({ likes: post.likes });
+});
+
+// GET /posts/:id/likes
+router.get('/:id/likes', async (req, res) => {
+  const post = await Post.findById(req.params.id).populate('likes', 'username');
+  if (!post) return res.status(404).send('Post not found');
+  res.json({ users: post.likes });
+});
+
+// Delete a post (only by owner)
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) return res.status(404).json({ error: 'Post not found' });
+    if (post.user.toString() !== req.user.id) {
+      return res.status(403).json({ error: 'You are not authorized to delete this post' });
+    }
+    await post.deleteOne();
+    logger.info('User %s deleted post %s', req.user.id, req.params.id);
+    res.json({ message: 'Post deleted successfully' });
+  } catch (err) {
+    logger.error('Error deleting post %s by user %s: %s', req.params.id, req.user.id, err.stack || err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Get all posts
+router.get('/', async (req, res) => {
+  try {
+    logger.info('Fetching all posts');
+    const posts = await Post.find({})
+      .sort({ createdAt: -1 })
+      .populate('user', 'username name');
+    // Remove nulls from likes array for each post
+    const cleanedPosts = posts.map(post => {
+      const obj = post.toObject();
+      obj.likes = (obj.likes || []).filter(Boolean);
+      return obj;
+    });
+    res.json(cleanedPosts);
+  } catch (err) {
+    logger.error('Error fetching all posts: %s', err.stack || err.message);
     res.status(500).json({ error: err.message });
   }
 });

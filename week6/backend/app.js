@@ -12,6 +12,7 @@ const permit = require('./middleware/role');
 const s3 = require('./utils/s3');
 const redisClient = require('./utils/redis');
 const logger = require('./utils/logger');
+const Message = require('./models/Message'); // Add this import
 
 const app = express();
 const server = http.createServer(app);
@@ -31,17 +32,27 @@ const io = require('socket.io')(server, {
 let onlineUsers = {};
 
 io.on('connection', (socket) => {
-  socket.on('join', (userId) => {
+  socket.on('join', async (userId) => {
     onlineUsers[userId] = socket.id;
-    console.log('User joined backend:', userId);
+    // Notify all clients this user is online
+    io.emit('user_online', userId);
+
+    // Send unread messages to this user
+    const unreadMessages = await Message.find({ to: userId, read: false });
+    if (unreadMessages.length > 0) {
+      io.to(socket.id).emit('unread_messages', unreadMessages);
+      // Optionally, mark as read here or when user reads them
+    }
   });
 
-  socket.on('send_message', ({ to, from, message }) => {
-    // Send the message to the recipient
+  socket.on('send_message', async ({ to, from, message }) => {
+    // Send the message to the recipient if online
     if (onlineUsers[to]) {
       io.to(onlineUsers[to]).emit('receive_message', { from, to, message });
-      // Emit chat_notification to the recipient
-      io.to(onlineUsers[to]).emit('chat_notification', { from, message });
+      // io.to(onlineUsers[to]).emit('chat_notification', { from, message });
+    } else {
+      // Save as unread in DB
+      await Message.create({ from, to, message, read: false, timestamp: new Date() });
     }
     // Echo to sender for instant feedback
     if (onlineUsers[from]) {
@@ -49,10 +60,24 @@ io.on('connection', (socket) => {
     }
   });
 
+  socket.on('get_online_users', () => {
+    socket.emit('online_users', Object.keys(onlineUsers));
+  });
+
+  // Mark messages as read
+  socket.on('mark_as_read', async ({ from, to }) => {
+    await Message.updateMany(
+      { from, to, read: false },
+      { $set: { read: true } }
+    );
+  });
+
   socket.on('disconnect', () => {
     for (const [userId, id] of Object.entries(onlineUsers)) {
       if (id === socket.id) {
         delete onlineUsers[userId];
+        // Notify all clients this user is offline
+        io.emit('user_offline', userId);
         break;
       }
     }

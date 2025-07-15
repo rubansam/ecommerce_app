@@ -12,7 +12,6 @@ export default function Profile() {
   const [error, setError] = useState('');
   const user = getUserFromToken();
   const navigate = useNavigate();
-console.log({user});
 
   useEffect(() => {
     setForm({

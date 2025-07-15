@@ -18,6 +18,9 @@ import ChatList from './components/Chat/ChatList';
 import Tooltip from '@mui/material/Tooltip';
 import axios from './api/axios';
 import { io } from 'socket.io-client';
+import Badge from '@mui/material/Badge';
+import { useSelector,useDispatch } from 'react-redux';
+import { resetUnread } from './slices/chatSlice';
   ;
 
 
@@ -27,10 +30,10 @@ function AppContent() {
   const [postDialogOpen, setPostDialogOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const navigate = useNavigate();
-  console.log({user});
   const socket = io('http://localhost:4000')
-  
-
+  const unreadCounts = useSelector(state => state.chat.unreadCounts);
+  const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
+  const dispatch = useDispatch();
   const handleLogin = () => {setUser(getUserFromToken()); navigate('/dashboard');};
   const handleLogout = () => {
     removeToken();
@@ -44,7 +47,7 @@ function AppContent() {
 
   // Function to fetch posts
   const fetchPosts = useCallback(() => {
-    axios.get('/posts/mine')
+    axios.get('/posts')
       .then(res => setPosts(res.data))
       .catch(() => setPosts([]));
   }, []);
@@ -142,9 +145,11 @@ function AppContent() {
               </IconButton>
             </Tooltip>
             <Tooltip title="Chats" arrow>
+            <Badge badgeContent={totalUnread} color="error" onClick={() => dispatch(resetUnread(user._id))}>
               <IconButton color="primary" onClick={() => navigate('/chats')}>
                 <ChatIcon />
               </IconButton>
+              </Badge>
             </Tooltip>
           </Box>
           <IconButton onClick={handleAvatarClick} size="large">

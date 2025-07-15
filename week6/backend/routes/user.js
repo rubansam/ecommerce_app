@@ -11,10 +11,10 @@ router.get('/dashboard-stats', auth, async (req, res) => {
     const cacheKey = `dashboard-stats:${userId}`;
     try {
         const cached = await redisClient.get(cacheKey);
-        if (cached) {
-            logger.info('Dashboard stats cache hit for user %s', userId);
-            return res.json(JSON.parse(cached));
-        }
+        // if (cached) {
+        //     logger.info('Dashboard stats cache hit for user %s', userId);
+        //     return res.json(JSON.parse(cached));
+        // }
         logger.info('Dashboard stats cache miss for user %s', userId);
 
         // 2. Compute stats 
@@ -38,12 +38,11 @@ router.get('/dashboard-stats', auth, async (req, res) => {
         const startDate = new Date();
         startDate.setDate(startDate.getDate() - (days - 1));
         startDate.setHours(0,0,0,0);
-      
         const dailyUploads = await Post.aggregate([
           {
             $match: {
               user: user._id,
-              createdAt: { $gte: startDate }
+               createdAt: { $gte: startDate }
             }
           },
           {
@@ -58,7 +57,6 @@ router.get('/dashboard-stats', auth, async (req, res) => {
             $sort: { _id: 1 }
           }
         ]);
-      
         // Fill in days with zero uploads
         const dailyUploadsMap = {};
         dailyUploads.forEach(d => { dailyUploadsMap[d._id] = d.count; });
@@ -249,17 +247,29 @@ router.get('/friends', auth, async (req, res) => {
 
 // Get chat friends (mutual followers)
 router.get('/chat/list', auth, async (req, res) => {
-    try {
-        const user = await User.findById(req.user.id).populate('following', 'username email avatar followers');
-        const friends = user.following.filter(f =>
-            f.followers.map(id => id.toString()).includes(user._id.toString())
-        );
-        logger.info('User %s fetched chat friends list', req.user.id);
-        res.json(friends);
-    } catch (err) {
-        logger.error('Error in /chat/list for user %s: %s', req.user.id, err.stack || err.message);
-        res.status(500).json({ error: 'Internal Server Error' });
+  try {
+    const user = await User.findById(req.user.id)
+      .populate('followers', 'username email avatar')
+      .populate('following', 'username email avatar');
+
+    // Combine followers and following, remove duplicates by _id
+    const combined = [...user.followers, ...user.following];
+    const uniqueUsers = [];
+    const seen = new Set();
+
+    for (const u of combined) {
+      const id = u._id.toString();
+      if (!seen.has(id)) {
+        uniqueUsers.push(u);
+        seen.add(id);
+      }
     }
+
+    res.json(uniqueUsers );
+  } catch (err) {
+    logger.error('Error in /chat/list for user %s: %s', req.user.id, err.stack || err.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 module.exports = router;
